@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How to join HeartShare, a national research study on heart failure. Anyone age 30 or older can join, with or without heart failure." />
+    <title>How to join — HeartShare</title>
+    <link rel="icon" type="image/png" href="heartshare-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500;1,8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      /* How to join: plain answers in the order people ask them: what, who, how, questions, where. */
+      .wrap{max-width:1280px;margin:auto}
+      .hfpef-note{max-width:640px;margin:0 0 2rem;padding:1rem 1.2rem;border-left:2px solid var(--crimson);background:var(--paper);color:var(--ink-soft);font-size:.88rem;line-height:1.6}.hfpef-note strong{color:var(--ink)}
+      .paths{background:var(--paper)}.path-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,5vw,5rem)}
+      .path{padding-top:1.4rem;border-top:2px solid var(--navy);scroll-margin-top:100px}.path-step{display:block;margin-bottom:.5rem;color:var(--crimson);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.path h3{margin:0 0 .6rem;font-family:var(--serif);font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:600;line-height:1.1}.path>p{max-width:520px;margin:0 0 1.4rem;color:var(--ink-soft);font-size:.95rem;line-height:1.65}
+      .path h4{margin:1.4rem 0 .5rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.path ul{margin:0;padding:0;list-style:none}.path li{position:relative;padding:.5rem 0 .5rem 1.1rem;border-bottom:1px solid var(--line);font-size:.92rem;line-height:1.5}.path li::before{position:absolute;top:1.05rem;left:0;width:5px;height:5px;content:"";background:var(--crimson);border-radius:50%}
+      .pay{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem 1rem;margin:0}.pay dt{font-family:var(--serif);font-size:1.25rem;font-weight:600}.pay dd{margin:0;padding:.2rem 0 .6rem;color:var(--ink-soft);font-size:.9rem;line-height:1.45;border-bottom:1px solid var(--line)}.pay dt{padding-top:.1rem;border-bottom:1px solid var(--line)}
+      .steps-section{background:var(--cream)}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1.2rem,3vw,2.5rem);margin:0;padding:0;list-style:none;counter-reset:step}
+      .steps li{padding-top:1rem;border-top:1px solid var(--line);counter-increment:step}.steps li::before{display:block;margin-bottom:.6rem;color:var(--crimson);font-family:var(--serif);font-size:1.35rem;font-style:italic;content:"0" counter(step)}.steps h3{margin:0 0 .45rem;font-family:var(--serif);font-size:1.3rem;font-weight:600}.steps p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.6}.steps a{color:var(--crimson-deep);font-weight:700}
+      .faq{background:var(--paper)}.faq-list{max-width:860px;border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line)}.faq-list summary{display:flex;justify-content:space-between;gap:1rem;padding:1.15rem 0;font-family:var(--serif);font-size:1.3rem;font-weight:600;cursor:pointer;list-style:none}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{flex:none;color:var(--crimson);font-family:var(--sans);font-weight:400;content:"+"}.faq-list details[open] summary::after{content:"–"}.faq-list details p{max-width:720px;margin:0 0 1.2rem;color:var(--ink-soft);font-size:.95rem;line-height:1.65}
+      .sites{color:#fff;background-color:var(--navy);background-image:linear-gradient(130deg,rgba(255,255,255,.055) 0 1px,transparent 1px 28px)}.sites .section-head h2{color:#fff}.sites .section-head p{color:#d9e2e4}
+      .site-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 2rem;margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.43)}.site-list li{padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.25)}.site-list strong{display:block;font-family:var(--serif);font-size:1.15rem;font-weight:600;line-height:1.25}.site-list span{display:block;margin-top:.3rem;color:#d9e2e4;font-size:.85rem}
+      .sites .inline-link{color:#fff}.sites .inline-link:hover{color:#f7cdd5}
+      .closing{background:var(--oat)}.closing-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:end;max-width:1280px;margin:auto}.closing h2{max-width:720px;margin:0 0 .8rem;font-family:var(--serif);font-size:clamp(2.2rem,3.8vw,3.6rem);font-weight:600;line-height:1.05;letter-spacing:-.04em}.closing p{max-width:560px;margin:0;color:var(--ink-soft)}.closing a:not(.button){color:var(--crimson-deep);font-weight:700}
+      @media(max-width:1000px){.steps,.site-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:780px){.path-grid,.closing-inner{grid-template-columns:1fr}}
+      @media(max-width:460px){.steps,.site-list{grid-template-columns:1fr}}
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="utility-bar"><a href="https://amphf.org/for-scientists/">For researchers</a></div>
+    <header id="top" class="site-header">
+      <a class="brand brand-logo" href="index.html" aria-label="HeartShare home"><img src="heartshare-logo.png" alt="HeartShare" /></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+      <nav id="site-navigation" class="main-nav" aria-label="Main navigation" data-open="false">
+        <a href="https://amphf.org/about/">About HeartShare</a><a href="our-participants.html">Our participants</a><a href="join.html" aria-current="page">How to join</a><a href="index.html#research">Research &amp; publications</a><a href="https://amphf.org/news-and-updates/in-the-news/">News &amp; updates</a><a class="nav-cta" href="mailto:heartsharestudy@northwestern.edu?subject=HeartShare%20study%20inquiry">Ask about joining</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="page-hero" aria-labelledby="page-heading">
+        <div class="page-hero-inner">
+          <p class="eyebrow">How to join</p>
+          <h1 id="page-heading">Help us learn more about <em>heart failure</em>.</h1>
+          <p class="lede">HeartShare is a research study about heart failure across the United States. Anyone age 30 or older can join, with or without heart failure.</p>
+          <p class="hfpef-note"><strong>What is HFpEF?</strong> HeartShare focuses on a type of heart failure called heart failure with preserved ejection fraction, or HFpEF. In HFpEF, the heart pumps normally, but it is too stiff to fill with blood the way it should.</p>
+          <div class="page-actions"><a class="button button-primary" href="#steps">How to get started</a><a class="button button-secondary" href="#registry">What taking part involves</a></div>
+        </div>
+      </section>
+
+      <section class="section paths" aria-labelledby="paths-heading">
+        <div class="section-head"><h2 id="paths-heading">How participation works</h2><p>Everyone starts in the Registry. Some people in the Registry may then be able to join the Deep Phenotyping Cohort.</p></div>
+        <div class="wrap path-grid">
+          <article id="registry" class="path" aria-labelledby="registry-heading">
+            <span class="path-step">Step 1 · Everyone</span>
+            <h3 id="registry-heading">The HeartShare Registry</h3>
+            <p>You answer online surveys about your health and daily life. You can do them from home, on your phone or computer, when it works for you.</p>
+            <h4>What is involved</h4>
+            <ul>
+              <li>The first set of surveys takes about 30 to 45 minutes.</li>
+              <li>After that, monthly surveys take about 5 to 10 minutes.</li>
+              <li>No in-person visits.</li>
+            </ul>
+            <h4>Who can join</h4>
+            <ul>
+              <li>Adults age 30 or older.</li>
+              <li>People who have been diagnosed with heart failure.</li>
+              <li>People who have not been diagnosed with heart failure. They help us compare.</li>
+              <li>You need to be able to fill out surveys online.</li>
+            </ul>
+            <h4>Payment</h4>
+            <dl class="pay"><dt>$50</dt><dd>Each quarter, we hold a gift card drawing for Registry participants. Some people win a $50 gift card.</dd></dl>
+          </article>
+          <article id="deep-phenotyping" class="path" aria-labelledby="dp-heading">
+            <span class="path-step">Step 2 · Some Registry participants</span>
+            <h3 id="dp-heading">Deep Phenotyping Cohort</h3>
+            <p>“Deep phenotyping” means taking a closer, more detailed look at your health. This part of the study takes place in person at one of our partner medical centers.</p>
+            <h4>What is involved</h4>
+            <ul>
+              <li>A first visit over two days, with detailed health exams.</li>
+              <li>Blood samples and other tests.</li>
+              <li>Optional: a small tissue sample (biopsy). The study team will explain what this involves before you decide.</li>
+              <li>One follow-up visit about one year after your first visit. More visits may be added in the future.</li>
+            </ul>
+            <h4>Who can join</h4>
+            <ul>
+              <li>People who are already in the Registry.</li>
+              <li>Adults age 30 or older with HFpEF.</li>
+              <li>You need to be able to visit one of our partner medical centers.</li>
+              <li>You must meet other study requirements. The study team will go over these with you.</li>
+            </ul>
+            <h4>Payment</h4>
+            <dl class="pay">
+              <dt>$500</dt><dd>for the first visit</dd>
+              <dt>$150</dt><dd>for the follow-up visit</dd>
+              <dt>$125</dt><dd>if you choose to give a tissue sample (optional)</dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="steps" class="section steps-section" aria-labelledby="steps-heading">
+        <div class="section-head"><h2 id="steps-heading">How to get started</h2><p>Joining is simple. Here is what to expect.</p></div>
+        <ol class="wrap steps">
+          <li><h3>Contact us</h3><p>Email <a href="mailto:heartsharestudy@northwestern.edu?subject=Joining%20HeartShare">heartsharestudy@northwestern.edu</a>, call <a href="tel:+13125031203">312-503-1203</a>, or use our <a href="https://amphf.org/contact/">contact form</a>.</p></li>
+          <li><h3>Learn about the study</h3><p>We will send you information about what taking part involves and answer your questions.</p></li>
+          <li><h3>Give your consent</h3><p>Read the consent form at your own pace. Ask any questions you have. Sign it only when you are ready.</p></li>
+          <li><h3>Get started</h3><p>Fill out your first set of surveys. Our team is here to help along the way.</p></li>
+        </ol>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq-heading">
+        <div class="section-head"><h2 id="faq-heading">Common questions</h2></div>
+        <div class="wrap"><div class="faq-list">
+          <details><summary>How much time does it take?</summary><p>In the Registry, the first set of surveys takes about 30 to 45 minutes. After that, monthly surveys take about 5 to 10 minutes. In the Deep Phenotyping Cohort, the first visit takes place over two days. There is one shorter follow-up visit about a year later.</p></details>
+          <details><summary>Will I be paid?</summary><p>Each quarter, we hold a drawing for Registry participants. Some people win a $50 gift card. Deep Phenotyping participants receive $500 for the first visit and $150 for the follow-up visit. People who choose to give an optional tissue sample receive $125.</p></details>
+          <details><summary>Is my information private?</summary><p>Your study data and samples are labeled with a study code, not your name. Your name and address are not stored with them. Only approved researchers can see the data, and they cannot download it. Any use of the data must be approved by HeartShare leaders.</p></details>
+          <details><summary>Can I stop taking part?</summary><p>Yes. You can stop at any time, for any reason. Stopping will not affect your regular medical care. To stop, contact the study team.</p></details>
+          <details><summary>Will I get my test results?</summary><p>Deep Phenotyping participants get results from tests that may matter for their health. Registry participants do not get individual results. Everyone can see updates about what we are learning on this website.</p></details>
+        </div></div>
+      </section>
+
+      <section class="section sites" aria-labelledby="sites-heading">
+        <div class="section-head"><h2 id="sites-heading">Partner medical centers</h2><p>Deep Phenotyping visits take place at these medical centers.</p></div>
+        <div class="wrap">
+          <ul class="site-list">
+            <li><strong>Northwestern University</strong><span>Chicago, Illinois</span></li>
+            <li><strong>Mass General Brigham</strong><span>Boston, Massachusetts</span></li>
+            <li><strong>UC Davis</strong><span>Davis, California</span></li>
+            <li><strong>University of Pennsylvania</strong><span>Philadelphia, Pennsylvania</span></li>
+            <li><strong>Mayo Clinic</strong><span>Rochester, Minnesota</span></li>
+            <li><strong>Johns Hopkins University</strong><span>Baltimore, Maryland</span></li>
+            <li><strong>Wake Forest Atrium Baptist</strong><span>Winston-Salem, North Carolina</span></li>
+            <li><strong>Wake Forest Atrium Baptist</strong><span>Charlotte, North Carolina</span></li>
+          </ul>
+          <a class="inline-link" href="https://amphf.org/contact/">Contact a study team near you</a>
+        </div>
+      </section>
+
+      <section class="section closing" aria-labelledby="closing-heading">
+        <div class="closing-inner">
+          <div><h2 id="closing-heading">Ready to join?</h2><p>More than 6,000 people are already taking part. Email <a href="mailto:heartsharestudy@northwestern.edu?subject=Joining%20HeartShare">heartsharestudy@northwestern.edu</a> or call <a href="tel:+13125031203">312-503-1203</a>. We will help you figure out if HeartShare is a good fit.</p></div>
+          <div class="page-actions"><a class="button button-primary" href="https://amphf.org/contact/">Contact the study team</a><a class="button button-secondary" href="our-participants.html">Meet our participants</a></div>
+        </div>
+      </section>
+    </main>
+    <footer><div class="footer-main"><div><a class="footer-wordmark" href="index.html">HeartShare</a><p class="footer-copy">A multi-site research consortium advancing the understanding of heart failure with preserved ejection fraction.</p></div><div class="footer-column"><h3>Explore</h3><a href="https://amphf.org/about/">About HeartShare</a><a href="our-participants.html">Our participants</a><a href="join.html">How to join</a><a href="index.html#research">Research &amp; publications</a></div><div class="footer-column"><h3>Connect</h3><a href="https://amphf.org/contact/">Contact the study team</a><a href="mailto:heartsharestudy@northwestern.edu">heartsharestudy@northwestern.edu</a><a href="tel:+13125031203">312-503-1203</a></div></div><div class="footer-bottom"><span>HeartShare · Accelerating Medicines Partnership® Heart Failure Program</span><span>Draft page · Content requires program review before publication</span></div></footer>
+    <script>
+      const menuButton = document.querySelector('.menu-button');
+      const navigation = document.querySelector('.main-nav');
+      menuButton.addEventListener('click', () => { const nextState = navigation.dataset.open !== 'true'; navigation.dataset.open = String(nextState); menuButton.setAttribute('aria-expanded', String(nextState)); menuButton.textContent = nextState ? 'Close' : 'Menu'; });
+      navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { navigation.dataset.open = 'false'; menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = 'Menu'; }));
+    </script>
+  </body>
+</html>

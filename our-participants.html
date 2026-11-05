@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet the people taking part in HeartShare, a national research study on heart failure." />
+    <title>Our participants — HeartShare</title>
+    <link rel="icon" type="image/png" href="heartshare-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500;1,8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      /* Our participants: figures first, one idea per section, no decorative charts. */
+      .as-of{margin:0;color:var(--ink-soft);font-size:.78rem}.as-of strong{color:var(--ink)}
+      .headline-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:1280px;margin:clamp(2.5rem,5vw,4rem) auto 0;border-top:2px solid var(--navy)}
+      .headline-stat{padding:1.4rem 0 0;border-bottom:1px solid var(--line)}.headline-stat+.headline-stat{padding-left:clamp(1.5rem,4vw,4rem);border-left:1px solid var(--line)}
+      .stat-number{display:block;font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.6rem);font-weight:600;line-height:1;letter-spacing:-.03em}.stat-label{display:block;max-width:300px;margin:.6rem 0 1.4rem;color:var(--ink-soft);font-size:.9rem;line-height:1.45}
+      .wrap{max-width:1280px;margin:auto}
+      .growth{background:var(--paper)}.growth-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,5vw,5rem)}
+      .chart-panel{border-top:1px solid var(--line);padding-top:1.2rem}.chart-panel h3{margin:0 0 .25rem;font-family:var(--serif);font-size:1.35rem;font-weight:600}.chart-panel .chart-sub{margin:0 0 1rem;color:var(--ink-soft);font-size:.82rem}
+      .chart{position:relative}.chart svg{display:block;width:100%;height:auto;overflow:visible}.chart .grid line{stroke:var(--line);stroke-width:1}.chart .axis text{fill:var(--ink-soft);font-family:var(--sans);font-size:11px}.chart .end-label{fill:var(--ink);font-family:var(--sans);font-size:12px;font-weight:700}
+      .chart-tip{position:absolute;z-index:2;padding:.45rem .6rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:3px;font-size:.75rem;line-height:1.35;white-space:nowrap;pointer-events:none;transform:translate(-50%,calc(-100% - 12px))}.chart-tip[hidden]{display:none}.chart-tip strong{display:block;font-size:.85rem}
+      .chart-note{margin:1.2rem 0 0;padding:.8rem 1rem;border-left:2px solid var(--crimson);background:var(--cream);color:var(--ink-soft);font-size:.8rem;line-height:1.5}
+      details.data-table{margin-top:1rem;font-size:.82rem}details.data-table summary{color:var(--crimson-deep);font-weight:700;cursor:pointer}details.data-table table{width:100%;max-width:520px;margin-top:.8rem;border-collapse:collapse}details.data-table th,details.data-table td{padding:.4rem .6rem;border-bottom:1px solid var(--line);text-align:right}details.data-table th:first-child,details.data-table td:first-child{text-align:left}
+      .health{background:var(--cream)}.health .bar-list{grid-template-rows:repeat(8,auto);grid-auto-flow:column}.bar-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(2rem,5vw,5rem);margin:0;padding:0;list-style:none}
+      .bar-row{display:grid;grid-template-columns:minmax(0,1fr) 3.6rem;gap:.35rem .8rem;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--line)}.bar-row span{font-size:.9rem}.bar-row b{font-size:.9rem;text-align:right;font-variant-numeric:tabular-nums}.bar-track{grid-column:1 / -1;height:6px;background:rgba(23,43,58,.07);border-radius:0 4px 4px 0}.bar-fill{height:100%;background:var(--navy);border-radius:0 4px 4px 0}
+      .footnote{max-width:640px;margin:1.6rem 0 0;color:var(--ink-soft);font-size:.8rem;line-height:1.55}
+      .people{background:var(--paper)}.people-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem)}
+      .people-block{padding-top:1.2rem;border-top:1px solid var(--line)}.people-block h3{margin:0 0 1rem;font-family:var(--serif);font-size:1.35rem;font-weight:600}
+      .mini-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:2.2rem}.mini-stats div{padding-top:.8rem;border-top:2px solid var(--navy)}.mini-stats strong{display:block;font-family:var(--serif);font-size:2rem;font-weight:600;line-height:1.1}.mini-stats span{display:block;margin-top:.3rem;color:var(--ink-soft);font-size:.8rem;line-height:1.4}
+      .map-figure{margin:0}.map-figure img{width:100%;height:auto;background:#fff}.map-figure figcaption{margin-top:.8rem;color:var(--ink-soft);font-size:.82rem;line-height:1.5}
+      .impact{color:#fff;background-color:var(--navy);background-image:linear-gradient(130deg,rgba(255,255,255,.055) 0 1px,transparent 1px 28px)}.impact .section-head h2{color:#fff}.impact .section-head p{color:#d9e2e4}
+      .impact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.43)}.impact-item{padding:1.4rem 1.4rem 1.6rem 0;border-bottom:1px solid rgba(255,255,255,.25)}.impact-item+.impact-item{padding-left:1.4rem;border-left:1px solid rgba(255,255,255,.25)}.impact-item strong{display:block;font-family:var(--serif);font-size:clamp(2.1rem,3.4vw,3rem);font-weight:600;line-height:1}.impact-item span{display:block;margin:.55rem 0 .5rem;color:#f0b2be;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.impact-item p{margin:0;color:#d9e2e4;font-size:.86rem;line-height:1.5}
+      .closing{background:var(--oat)}.closing-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:end;max-width:1280px;margin:auto}.closing h2{max-width:720px;margin:0 0 .8rem;font-family:var(--serif);font-size:clamp(2.2rem,3.8vw,3.6rem);font-weight:600;line-height:1.05;letter-spacing:-.04em}.closing p{max-width:560px;margin:0;color:var(--ink-soft)}
+      @media(max-width:900px){.impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-item:nth-child(3){padding-left:0;border-left:0}}
+      @media(max-width:780px){.health .bar-list{grid-template-rows:none;grid-auto-flow:row}.growth-charts,.bar-list,.people-grid,.closing-inner{grid-template-columns:1fr}.headline-stats{grid-template-columns:1fr}.headline-stat+.headline-stat{padding-left:0;border-left:0}}
+      @media(max-width:460px){.impact-grid{grid-template-columns:1fr}.impact-item+.impact-item{padding-left:0;border-left:0}}
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="utility-bar"><a href="https://amphf.org/for-scientists/">For researchers</a></div>
+    <header id="top" class="site-header">
+      <a class="brand brand-logo" href="index.html" aria-label="HeartShare home"><img src="heartshare-logo.png" alt="HeartShare" /></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+      <nav id="site-navigation" class="main-nav" aria-label="Main navigation" data-open="false">
+        <a href="https://amphf.org/about/">About HeartShare</a><a href="our-participants.html" aria-current="page">Our participants</a><a href="join.html">How to join</a><a href="index.html#research">Research &amp; publications</a><a href="https://amphf.org/news-and-updates/in-the-news/">News &amp; updates</a><a class="nav-cta" href="mailto:heartsharestudy@northwestern.edu?subject=HeartShare%20study%20inquiry">Ask about joining</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      <!-- All figures on this page are as of the date below. Update them together. -->
+      <section class="page-hero" aria-labelledby="page-heading">
+        <div class="page-hero-inner">
+          <p class="eyebrow">Our participants</p>
+          <h1 id="page-heading">Meet the HeartShare <em>community</em>.</h1>
+          <p class="lede">More than 6,000 people across the country are helping us learn about heart failure. Here is a look at who they are and what they have done so far.</p>
+          <p class="as-of">Figures as of <strong>November 2026</strong></p>
+          <div class="headline-stats">
+            <div class="headline-stat"><span class="stat-number">6,180</span><span class="stat-label">people in the HeartShare Registry</span></div>
+            <div class="headline-stat"><span class="stat-number">823</span><span class="stat-label">people enrolled in the Deep Phenotyping Cohort</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section growth" aria-labelledby="growth-heading">
+        <div class="section-head"><h2 id="growth-heading">A growing community</h2><p>We started with 24 people in July 2023. Today, more than 6,000 people take part.</p></div>
+        <div class="wrap">
+          <div class="growth-charts">
+            <div class="chart-panel"><h3>HeartShare Registry</h3><p class="chart-sub">Total people enrolled</p><div class="chart" data-series="registry" data-color="var(--navy)"></div></div>
+            <div class="chart-panel"><h3>Deep Phenotyping Cohort</h3><p class="chart-sub">Total people enrolled</p><div class="chart" data-series="cohort" data-color="var(--crimson)"></div></div>
+          </div>
+          <p class="chart-note">Draft: these chart points are estimates read from the current website chart. They will be replaced with exact totals.</p>
+          <details class="data-table"><summary>Show the numbers</summary><table><caption class="visually-hidden">People enrolled over time</caption><thead><tr><th scope="col">Date</th><th scope="col">Registry</th><th scope="col">Deep Phenotyping</th></tr></thead><tbody id="growth-table"></tbody></table></details>
+        </div>
+      </section>
+
+      <section class="section people" aria-labelledby="people-heading">
+        <div class="section-head"><h2 id="people-heading">Who takes part</h2><p>Heart failure affects people in every part of the country and from all walks of life. For our research to help everyone, we want HeartShare to include people from all walks of life too.</p></div>
+        <div class="wrap people-grid">
+          <div class="people-block">
+            <h3>At a glance</h3>
+            <div class="mini-stats">
+              <div><strong>68</strong><span>average age</span></div>
+              <div><strong>51.5%</strong><span>female</span></div>
+              <div><strong>48.5%</strong><span>male</span></div>
+            </div>
+            <h3>Race</h3>
+            <ul class="bar-list" style="grid-template-columns:1fr">
+              <li class="bar-row"><span>White</span><b>79.0%</b><div class="bar-track"><div class="bar-fill" style="width:79%"></div></div></li>
+              <li class="bar-row"><span>Black or African American</span><b>10.4%</b><div class="bar-track"><div class="bar-fill" style="width:10.4%"></div></div></li>
+              <li class="bar-row"><span>Asian</span><b>4.9%</b><div class="bar-track"><div class="bar-fill" style="width:4.9%"></div></div></li>
+              <li class="bar-row"><span>Other</span><b>3.0%</b><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></li>
+              <li class="bar-row"><span>More than one race</span><b>2.7%</b><div class="bar-track"><div class="bar-fill" style="width:2.7%"></div></div></li>
+            </ul>
+            <div class="mini-stats" style="grid-template-columns:1fr;margin:2rem 0 0"><div><strong>7.9%</strong><span>are Hispanic or Latino. People who are Hispanic or Latino can be of any race, so this number is shown on its own.</span></div></div>
+          </div>
+          <div class="people-block">
+            <h3>Where participants live</h3>
+            <figure class="map-figure">
+              <img src="participant-map.png" alt="Map of the United States shaded by number of participants in each state. The most participants live in Illinois, followed by California and North Carolina." width="1400" height="1000" loading="lazy" />
+              <figcaption>Darker states have more participants. Most people live near one of our partner medical centers.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section health" aria-labelledby="health-heading">
+        <div class="section-head"><h2 id="health-heading">Other health conditions</h2><p>Many people in HeartShare also live with other health conditions. These are the most common ones.</p></div>
+        <div class="wrap">
+          <ul class="bar-list">
+            <li class="bar-row"><span>High blood pressure</span><b>59.9%</b><div class="bar-track"><div class="bar-fill" style="width:59.9%"></div></div></li>
+            <li class="bar-row"><span>High cholesterol</span><b>59.0%</b><div class="bar-track"><div class="bar-fill" style="width:59%"></div></div></li>
+            <li class="bar-row"><span>Arthritis</span><b>46.3%</b><div class="bar-track"><div class="bar-fill" style="width:46.3%"></div></div></li>
+            <li class="bar-row"><span>Obesity</span><b>41.3%</b><div class="bar-track"><div class="bar-fill" style="width:41.3%"></div></div></li>
+            <li class="bar-row"><span>Sleep apnea</span><b>35.2%</b><div class="bar-track"><div class="bar-fill" style="width:35.2%"></div></div></li>
+            <li class="bar-row"><span>Prediabetes</span><b>32.6%</b><div class="bar-track"><div class="bar-fill" style="width:32.6%"></div></div></li>
+            <li class="bar-row"><span>Atrial fibrillation (AFib)</span><b>30.7%</b><div class="bar-track"><div class="bar-fill" style="width:30.7%"></div></div></li>
+            <li class="bar-row"><span>Coronary artery disease</span><b>21.4%</b><div class="bar-track"><div class="bar-fill" style="width:21.4%"></div></div></li>
+            <li class="bar-row"><span>Cancer</span><b>19.3%</b><div class="bar-track"><div class="bar-fill" style="width:19.3%"></div></div></li>
+            <li class="bar-row"><span>Diabetes</span><b>17.7%</b><div class="bar-track"><div class="bar-fill" style="width:17.7%"></div></div></li>
+            <li class="bar-row"><span>Autoimmune disorder</span><b>14.1%</b><div class="bar-track"><div class="bar-fill" style="width:14.1%"></div></div></li>
+            <li class="bar-row"><span>Heart attack</span><b>11.9%</b><div class="bar-track"><div class="bar-fill" style="width:11.9%"></div></div></li>
+            <li class="bar-row"><span>Chronic kidney disease</span><b>10.4%</b><div class="bar-track"><div class="bar-fill" style="width:10.4%"></div></div></li>
+            <li class="bar-row"><span>Asthma</span><b>10.3%</b><div class="bar-track"><div class="bar-fill" style="width:10.3%"></div></div></li>
+            <li class="bar-row"><span>COPD</span><b>10.0%</b><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></li>
+            <li class="bar-row"><span>Stroke</span><b>9.2%</b><div class="bar-track"><div class="bar-fill" style="width:9.2%"></div></div></li>
+          </ul>
+          <p class="footnote">Many people have more than one condition, so these numbers add up to more than 100%.</p>
+        </div>
+      </section>
+
+      <section class="section impact" aria-labelledby="impact-heading">
+        <div class="section-head"><h2 id="impact-heading">What we have done together</h2><p>Every survey, visit, and sample helps us learn more about heart failure.</p></div>
+        <div class="wrap impact-grid">
+          <div class="impact-item"><strong>54,146</strong><span>Hours given</span><p>That adds up to more than 6 years of time.</p></div>
+          <div class="impact-item"><strong>331,245</strong><span>Surveys completed</span><p>These help us track health over time.</p></div>
+          <div class="impact-item"><strong>1,061</strong><span>Study visits</span><p>779 first visits and 282 follow-up visits.</p></div>
+          <div class="impact-item"><strong>177</strong><span>Tissue samples</span><p>Optional tissue samples provided by participants who chose this procedure.</p></div>
+        </div>
+      </section>
+
+      <section class="section closing" aria-labelledby="closing-heading">
+        <div class="closing-inner">
+          <div><h2 id="closing-heading">Be part of the story.</h2><p>Anyone age 30 or older can join, with or without heart failure.</p></div>
+          <div class="page-actions"><a class="button button-primary" href="join.html">How to join</a><a class="button button-secondary" href="https://amphf.org/contact/">Contact the study team</a></div>
+        </div>
+      </section>
+    </main>
+    <footer><div class="footer-main"><div><a class="footer-wordmark" href="index.html">HeartShare</a><p class="footer-copy">A multi-site research consortium advancing the understanding of heart failure with preserved ejection fraction.</p></div><div class="footer-column"><h3>Explore</h3><a href="https://amphf.org/about/">About HeartShare</a><a href="our-participants.html">Our participants</a><a href="join.html">How to join</a><a href="index.html#research">Research &amp; publications</a></div><div class="footer-column"><h3>Connect</h3><a href="https://amphf.org/contact/">Contact the study team</a><a href="mailto:heartsharestudy@northwestern.edu">heartsharestudy@northwestern.edu</a><a href="tel:+13125031203">312-503-1203</a></div></div><div class="footer-bottom"><span>HeartShare · Accelerating Medicines Partnership® Heart Failure Program</span><span>Draft page · Content requires program review before publication</span></div></footer>
+    <script>
+      const menuButton = document.querySelector('.menu-button');
+      const navigation = document.querySelector('.main-nav');
+      menuButton.addEventListener('click', () => { const nextState = navigation.dataset.open !== 'true'; navigation.dataset.open = String(nextState); menuButton.setAttribute('aria-expanded', String(nextState)); menuButton.textContent = nextState ? 'Close' : 'Menu'; });
+      navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { navigation.dataset.open = 'false'; menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = 'Menu'; }));
+
+      /* Growth data: one row per date, running totals. Edit this list to update both charts and the table.
+         DRAFT values estimated from the current amphf.org chart, except July 2023 (24) and the latest Registry total. */
+      const GROWTH = [
+        { date: '2023-07', registry: 24, cohort: 125 },
+        { date: '2024-01', registry: 675, cohort: 250 },
+        { date: '2024-07', registry: 1975, cohort: 475 },
+        { date: '2025-01', registry: 3350, cohort: 625 },
+        { date: '2025-07', registry: 4575, cohort: 750 },
+        { date: '2026-01', registry: 5575, cohort: 850 },
+        { date: '2026-04', registry: 6180, cohort: 900 },
+      ];
+
+      const fmtDate = (d) => new Date(d + '-01T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      const fmtNum = (n) => n.toLocaleString('en-US');
+      const months = (d) => { const [y, m] = d.split('-').map(Number); return y * 12 + m; };
+      /* Round axis steps (1, 2, 2.5 or 5 x a power of ten) so tick labels read cleanly. */
+      const niceStep = (v) => { const raw = v / 4, mag = Math.pow(10, Math.floor(Math.log10(raw))); return [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw); };
+
+      /* Line chart on a true time scale, so uneven gaps between dates are drawn to scale. */
+      function drawChart(el) {
+        const key = el.dataset.series, color = el.dataset.color;
+        const W = 560, H = 260, L = 48, R = 64, T = 12, B = 30;
+        const x0 = months(GROWTH[0].date), x1 = months(GROWTH[GROWTH.length - 1].date);
+        const step = niceStep(Math.max(...GROWTH.map((d) => d[key]))), yMax = Math.ceil(Math.max(...GROWTH.map((d) => d[key])) / step) * step;
+        const x = (d) => L + ((months(d) - x0) / (x1 - x0)) * (W - L - R);
+        const y = (v) => T + (1 - v / yMax) * (H - T - B);
+        const ticks = Array.from({ length: yMax / step + 1 }, (_, i) => i * step);
+        const years = [...new Set(GROWTH.map((d) => d.date.slice(0, 4)))];
+        const pts = GROWTH.map((d) => [x(d.date), y(d[key])]);
+        const last = GROWTH[GROWTH.length - 1];
+        el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${el.previousElementSibling.previousElementSibling.textContent}: from ${fmtNum(GROWTH[0][key])} in ${fmtDate(GROWTH[0].date)} to ${fmtNum(last[key])} in ${fmtDate(last.date)}">
+          <g class="grid">${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/>`).join('')}</g>
+          <g class="axis">${ticks.map((t) => `<text x="${L - 8}" y="${y(t) + 4}" text-anchor="end">${fmtNum(t)}</text>`).join('')}
+            ${years.map((yr) => { const d = months(yr + '-01') < x0 ? GROWTH[0].date : yr + '-01'; return `<text x="${x(d)}" y="${H - 8}" text-anchor="middle">${yr}</text>`; }).join('')}</g>
+          <polyline points="${pts.map((p) => p.join(',')).join(' ')}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>
+          ${pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${color}" stroke="var(--paper)" stroke-width="2"/>`).join('')}
+          <text class="end-label" x="${pts[pts.length - 1][0] + 8}" y="${pts[pts.length - 1][1] + 4}">${fmtNum(last[key])}</text>
+          <rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/>
+        </svg><div class="chart-tip" hidden></div>`;
+        const svg = el.querySelector('svg'), tip = el.querySelector('.chart-tip'), cross = el.querySelector('.cross');
+        svg.addEventListener('pointermove', (e) => {
+          const box = svg.getBoundingClientRect(), sx = ((e.clientX - box.left) / box.width) * W;
+          let i = 0; pts.forEach((p, j) => { if (Math.abs(p[0] - sx) < Math.abs(pts[i][0] - sx)) i = j; });
+          cross.setAttribute('x1', pts[i][0]); cross.setAttribute('x2', pts[i][0]); cross.setAttribute('visibility', 'visible');
+          tip.innerHTML = `<strong>${fmtNum(GROWTH[i][key])}</strong>${fmtDate(GROWTH[i].date)}`;
+          tip.style.left = (pts[i][0] / W) * box.width + 'px'; tip.style.top = (pts[i][1] / H) * box.height + 'px'; tip.hidden = false;
+        });
+        svg.addEventListener('pointerleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); });
+      }
+      document.querySelectorAll('.chart').forEach(drawChart);
+      document.getElementById('growth-table').innerHTML = GROWTH.map((d) => `<tr><td>${fmtDate(d.date)}</td><td>${fmtNum(d.registry)}</td><td>${fmtNum(d.cohort)}</td></tr>`).join('');
+    </script>
+  </body>
+</html>
