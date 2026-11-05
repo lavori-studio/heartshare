@@ -64,13 +64,13 @@
       </section>
 
       <section class="section growth" aria-labelledby="growth-heading">
-        <div class="section-head"><h2 id="growth-heading">A growing community</h2><p>We started with 24 people in July 2023. Today, more than 6,000 people take part.</p></div>
+        <div class="section-head"><h2 id="growth-heading">A growing community</h2><p>The first people joined in March 2023. Today, more than 6,000 people take part.</p></div>
         <div class="wrap">
           <div class="growth-charts">
-            <div class="chart-panel"><h3>HeartShare Registry</h3><p class="chart-sub">Total people enrolled</p><div class="chart" data-series="registry" data-color="var(--navy)"></div></div>
-            <div class="chart-panel"><h3>Deep Phenotyping Cohort</h3><p class="chart-sub">Total people enrolled</p><div class="chart" data-series="cohort" data-color="var(--crimson)"></div></div>
+            <div class="chart-panel"><h3>HeartShare Registry</h3><p class="chart-sub">Total people who have signed up</p><div class="chart" data-series="registry" data-color="var(--navy)"></div></div>
+            <div class="chart-panel"><h3>Deep Phenotyping Cohort</h3><p class="chart-sub">Total people who have signed up</p><div class="chart" data-series="cohort" data-color="var(--crimson)"></div></div>
           </div>
-          <p class="chart-note">Draft: points before November 2026 are estimates read from the current website chart. They will be replaced with exact totals.</p>
+          <p class="chart-note">Draft: chart totals come from signed consent forms and do not yet match the totals at the top of this page.</p>
           <details class="data-table"><summary>Show the numbers</summary><table><caption class="visually-hidden">People enrolled over time</caption><thead><tr><th scope="col">Date</th><th scope="col">Registry</th><th scope="col">Deep Phenotyping</th></tr></thead><tbody id="growth-table"></tbody></table></details>
         </div>
       </section>
@@ -81,9 +81,9 @@
           <div class="people-block">
             <h3>At a glance</h3>
             <div class="mini-stats">
-              <div><strong>68</strong><span>average age</span></div>
-              <div><strong>51.5%</strong><span>female</span></div>
-              <div><strong>48.5%</strong><span>male</span></div>
+              <div><strong>68.6</strong><span>average age</span></div>
+              <div><strong>52.5%</strong><span>female</span></div>
+              <div><strong>47.3%</strong><span>male</span></div>
             </div>
             <h3>Race</h3>
             <ul class="bar-list" style="grid-template-columns:1fr">
@@ -93,7 +93,8 @@
               <li class="bar-row"><span>Other</span><b>3.0%</b><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></li>
               <li class="bar-row"><span>More than one race</span><b>2.7%</b><div class="bar-track"><div class="bar-fill" style="width:2.7%"></div></div></li>
             </ul>
-            <div class="mini-stats" style="grid-template-columns:1fr;margin:2rem 0 0"><div><strong>7.9%</strong><span>are Hispanic or Latino. People who are Hispanic or Latino can be of any race, so this number is shown on its own.</span></div></div>
+            <div class="mini-stats" style="grid-template-columns:1fr;margin:2rem 0 0"><div><strong>8.2%</strong><span>are Hispanic or Latino. People who are Hispanic or Latino can be of any race, so this number is shown on its own.</span></div></div>
+            <p class="footnote">Sex and ethnicity are based on the 5,073 participants who answered these questions.</p>
           </div>
           <div class="people-block">
             <h3>Where participants live</h3>
@@ -133,7 +134,7 @@
       <section class="section impact" aria-labelledby="impact-heading">
         <div class="section-head"><h2 id="impact-heading">What we have done together</h2><p>Every survey, visit, and sample helps us learn more about heart failure.</p></div>
         <div class="wrap impact-grid">
-          <div class="impact-item"><strong>54,146</strong><span>Hours given</span><p>That adds up to more than 6 years of time.</p></div>
+          <div class="impact-item"><strong>66,000</strong><span>Hours given</span><p>About 66,000 hours of surveys and visits. That adds up to more than 7 years of time.</p></div>
           <div class="impact-item"><strong>393,007</strong><span>Surveys completed</span><p>These help us track health over time.</p></div>
           <div class="impact-item"><strong>1,061</strong><span>Study visits</span><p>779 first visits and 282 follow-up visits.</p></div>
           <div class="impact-item"><strong>198</strong><span>Tissue samples</span><p>Optional tissue samples provided by participants who chose this procedure.</p></div>
@@ -154,16 +155,55 @@
       menuButton.addEventListener('click', () => { const nextState = navigation.dataset.open !== 'true'; navigation.dataset.open = String(nextState); menuButton.setAttribute('aria-expanded', String(nextState)); menuButton.textContent = nextState ? 'Close' : 'Menu'; });
       navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { navigation.dataset.open = 'false'; menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = 'Menu'; }));
 
-      /* Growth data: one row per date, running totals. Edit this list to update both charts and the table.
-         DRAFT: rows before November 2026 are estimated from the current amphf.org chart, except the July 2023 Registry total (24). */
+      /* Growth data: running totals of people who signed a consent form, by month.
+         Source: consent status report, 5 Nov 2026. November 2026 is a partial month.
+         Edit this list to update both charts and the table. */
       const GROWTH = [
-        { date: '2023-07', registry: 24, cohort: 125 },
-        { date: '2024-01', registry: 675, cohort: 250 },
-        { date: '2024-07', registry: 1975, cohort: 475 },
-        { date: '2025-01', registry: 3350, cohort: 625 },
-        { date: '2025-07', registry: 4575, cohort: 750 },
-        { date: '2026-01', registry: 5575, cohort: 850 },
-        { date: '2026-11', registry: 6489, cohort: 868 },
+        { date: '2023-03', registry: 7, cohort: 0 },
+        { date: '2023-04', registry: 14, cohort: 2 },
+        { date: '2023-05', registry: 14, cohort: 2 },
+        { date: '2023-06', registry: 24, cohort: 2 },
+        { date: '2023-07', registry: 56, cohort: 2 },
+        { date: '2023-08', registry: 112, cohort: 4 },
+        { date: '2023-09', registry: 164, cohort: 10 },
+        { date: '2023-10', registry: 268, cohort: 17 },
+        { date: '2023-11', registry: 382, cohort: 39 },
+        { date: '2023-12', registry: 511, cohort: 52 },
+        { date: '2024-01', registry: 680, cohort: 72 },
+        { date: '2024-02', registry: 867, cohort: 111 },
+        { date: '2024-03', registry: 1110, cohort: 152 },
+        { date: '2024-04', registry: 1335, cohort: 177 },
+        { date: '2024-05', registry: 1592, cohort: 217 },
+        { date: '2024-06', registry: 1782, cohort: 249 },
+        { date: '2024-07', registry: 1999, cohort: 286 },
+        { date: '2024-08', registry: 2226, cohort: 315 },
+        { date: '2024-09', registry: 2463, cohort: 349 },
+        { date: '2024-10', registry: 2765, cohort: 390 },
+        { date: '2024-11', registry: 2958, cohort: 419 },
+        { date: '2024-12', registry: 3129, cohort: 445 },
+        { date: '2025-01', registry: 3428, cohort: 465 },
+        { date: '2025-02', registry: 3633, cohort: 486 },
+        { date: '2025-03', registry: 3820, cohort: 511 },
+        { date: '2025-04', registry: 3983, cohort: 531 },
+        { date: '2025-05', registry: 4195, cohort: 559 },
+        { date: '2025-06', registry: 4374, cohort: 584 },
+        { date: '2025-07', registry: 4544, cohort: 604 },
+        { date: '2025-08', registry: 4708, cohort: 621 },
+        { date: '2025-09', registry: 4920, cohort: 638 },
+        { date: '2025-10', registry: 5104, cohort: 646 },
+        { date: '2025-11', registry: 5255, cohort: 677 },
+        { date: '2025-12', registry: 5402, cohort: 690 },
+        { date: '2026-01', registry: 5654, cohort: 709 },
+        { date: '2026-02', registry: 5852, cohort: 726 },
+        { date: '2026-03', registry: 5990, cohort: 746 },
+        { date: '2026-04', registry: 6143, cohort: 769 },
+        { date: '2026-05', registry: 6263, cohort: 790 },
+        { date: '2026-06', registry: 6343, cohort: 804 },
+        { date: '2026-07', registry: 6441, cohort: 813 },
+        { date: '2026-08', registry: 6534, cohort: 826 },
+        { date: '2026-09', registry: 6621, cohort: 836 },
+        { date: '2026-10', registry: 6730, cohort: 853 },
+        { date: '2026-11', registry: 6741, cohort: 856 },
       ];
 
       const fmtDate = (d) => new Date(d + '-01T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
@@ -190,19 +230,20 @@
             ${years.map((yr) => { const d = months(yr + '-01') < x0 ? GROWTH[0].date : yr + '-01'; return `<text x="${x(d)}" y="${H - 8}" text-anchor="middle">${yr}</text>`; }).join('')}</g>
           <polyline points="${pts.map((p) => p.join(',')).join(' ')}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
           <line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>
-          ${pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${color}" stroke="var(--paper)" stroke-width="2"/>`).join('')}
+          <circle class="hover-dot" r="4" fill="${color}" stroke="var(--paper)" stroke-width="2" visibility="hidden"/>
+          <circle cx="${pts[pts.length - 1][0]}" cy="${pts[pts.length - 1][1]}" r="4" fill="${color}" stroke="var(--paper)" stroke-width="2"/>
           <text class="end-label" x="${pts[pts.length - 1][0] + 8}" y="${pts[pts.length - 1][1] + 4}">${fmtNum(last[key])}</text>
           <rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/>
         </svg><div class="chart-tip" hidden></div>`;
-        const svg = el.querySelector('svg'), tip = el.querySelector('.chart-tip'), cross = el.querySelector('.cross');
+        const svg = el.querySelector('svg'), tip = el.querySelector('.chart-tip'), cross = el.querySelector('.cross'), dot = el.querySelector('.hover-dot');
         svg.addEventListener('pointermove', (e) => {
           const box = svg.getBoundingClientRect(), sx = ((e.clientX - box.left) / box.width) * W;
           let i = 0; pts.forEach((p, j) => { if (Math.abs(p[0] - sx) < Math.abs(pts[i][0] - sx)) i = j; });
-          cross.setAttribute('x1', pts[i][0]); cross.setAttribute('x2', pts[i][0]); cross.setAttribute('visibility', 'visible');
+          cross.setAttribute('x1', pts[i][0]); cross.setAttribute('x2', pts[i][0]); cross.setAttribute('visibility', 'visible'); dot.setAttribute('cx', pts[i][0]); dot.setAttribute('cy', pts[i][1]); dot.setAttribute('visibility', 'visible');
           tip.innerHTML = `<strong>${fmtNum(GROWTH[i][key])}</strong>${fmtDate(GROWTH[i].date)}`;
           tip.style.left = (pts[i][0] / W) * box.width + 'px'; tip.style.top = (pts[i][1] / H) * box.height + 'px'; tip.hidden = false;
         });
-        svg.addEventListener('pointerleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); });
+        svg.addEventListener('pointerleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); });
       }
       document.querySelectorAll('.chart').forEach(drawChart);
       document.getElementById('growth-table').innerHTML = GROWTH.map((d) => `<tr><td>${fmtDate(d.date)}</td><td>${fmtNum(d.registry)}</td><td>${fmtNum(d.cohort)}</td></tr>`).join('');
